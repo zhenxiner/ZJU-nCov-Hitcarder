@@ -228,6 +228,7 @@ if __name__ == "__main__":
         print(ret, msg)
 
     dingtalk_token = os.environ.get('DINGTALK_TOKEN')
+    print(dingtalk_token)
     if dingtalk_token:
         ret = message.dingtalk(msg, dingtalk_token)
         print('send_dingtalk_message', ret)
