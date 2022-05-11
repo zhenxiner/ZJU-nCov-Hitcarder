@@ -23,7 +23,7 @@ def dingtalk(msg, dingtalk_token, tries=5):
                               data=json.dumps(data), headers=header).json()
             print(r)
 #             if r["errcode"] == 0:
-            print(r["e"], r['e'])
+#             print(r["e"], r['e'])
             if r["e"] == 0:
                 return True
         except:
