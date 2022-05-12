@@ -6,6 +6,7 @@ import time
 
 def dingtalk(msg, dingtalk_token, tries=5):
     dingtalk_url = 'https://oapi.dingtalk.com/robot/send?access_token='+dingtalk_token
+    msg = 'ZHR' + msg
     data = {
         "msgtype": "text",
         "text": {
@@ -22,9 +23,9 @@ def dingtalk(msg, dingtalk_token, tries=5):
             r = requests.post(dingtalk_url,
                               data=json.dumps(data), headers=header).json()
             print(r)
-#             if r["errcode"] == 0:
+            if r["errcode"] == 0:
 #             print(r["e"], r['e'])
-            if r["e"] == 0:
+#             if r["e"] == 0:
                 return True
         except:
             pass
