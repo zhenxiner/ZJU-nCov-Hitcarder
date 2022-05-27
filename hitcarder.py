@@ -90,11 +90,12 @@ class HitCarder(object):
             raise RegexMatchError('Relative info not found in html with regex')
 
         with open("form.txt", "r", encoding="utf-8") as f:
-            print(new_form, f.read())
+#             print(new_form, f.read())
             if new_form == f.read():
                 return True
-        #with open("form.txt", "w", encoding="utf-8") as f:
-        #     f.write(new_form)
+            
+        with open("form.txt", "w", encoding="utf-8") as f:
+            f.write(new_form)
         return False
 
     def get_info(self, html=None):
@@ -194,7 +195,7 @@ def main(username, password):
 
     try:
         ret = hit_carder.check_form()
-        print(ret, 'Whats wrong')
+#         print(ret, 'Whats wrong')
         if not ret:
             return 2, '打卡信息已改变，请手动打卡'
     except Exception as err:
