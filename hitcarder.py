@@ -90,15 +90,14 @@ class HitCarder(object):
             raise RegexMatchError('Relative info not found in html with regex')
 
         with open("form.txt", "r", encoding="utf-8") as f:
-#             print(new_form, f.read())
 #             new_formlines = new_form.splitlines() 
 #             flines = f.splitlines()
 #             import difflib
 #             d = difflib.Differ() #创建differ()对象
 #             diff = d.compare(new_formlines,flines) #采用compare 方法对字符串进行比较
 #             print (''.join(list(diff))) #打印输出结果
-            print(new_form)
-            print(f.read())
+#             print(new_form)
+#             print(f.read())
             if new_form == f.read():
                 return True
             
